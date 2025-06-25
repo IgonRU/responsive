@@ -1,0 +1,49 @@
+@import "css3-flexbox";
+@import "css3-mixins";
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  @include css3-flex-display();
+  @include css3-flex-direction(column);
+  @include css3-justify-content(stretch);
+  @include css3-align-items(stretch);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+
+app-root {
+  @include css3-flex-display();
+  @include css3-flex-direction(column);
+  @include css3-flex(1);
+}
+
+igon-responsive-layout {
+  @include css3-flex-display(column);
+  @include css3-flex(1);
+
+  section.responsive-layout-header,
+  section.responsive-layout-body,
+  section.responsive-layout-footer {
+    @include css3-flex-display(column);
+    @include css3-justify-content(flex-start);
+    @include css3-align-items(stretch);
+  }
+
+  section.responsive-layout-body {
+    @include css3-flex(1);
+  }
+
+  &.layout-card {
+    @include css3-flex-display();
+    @include css3-justify-content(center);
+    @include css3-align-items(center);
+
+    .responsive-layout-body {
+      @include css3-justify-content(center);
+    }
+  }
+}
